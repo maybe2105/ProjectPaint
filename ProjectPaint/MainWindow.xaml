@@ -1,0 +1,92 @@
+﻿<Window x:Class="ProjectPaint.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectPaint"
+        mc:Ignorable="d"
+        Title="Project Paint" Height="450" Width="800" WindowState="Maximized">
+    <DockPanel LastChildFill="True">
+        <DockPanel DockPanel.Dock="Left" >
+            <StackPanel   Orientation="Vertical" DockPanel.Dock="Top" HorizontalAlignment="Stretch" Width="89" RenderTransformOrigin="0.5,0.5" >
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="1.259"/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="0.978"/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+                <StackPanel Orientation="Vertical" x:Name="btnPannel">
+
+                </StackPanel>
+
+
+                <Label Content="Line:" VerticalAlignment="Center"  Padding="16,16,0,4"></Label>
+                <ComboBox x:Name="line" Height="20" Width="60" >
+                    <ComboBoxItem  Tag="" IsSelected="True" >
+                        Line
+                    </ComboBoxItem>
+                    <ComboBoxItem  Tag="5,5">
+                       Dashed
+
+                    </ComboBoxItem>
+
+                </ComboBox>
+                <Label Content="Thickness:" VerticalAlignment="Center"  Padding="16,16,0,4"></Label>
+                <ComboBox x:Name="thicknessBox" Height="20" Width="60" >
+                    <ComboBoxItem Content="1" IsSelected="True"></ComboBoxItem>
+                    <ComboBoxItem Content="2"></ComboBoxItem>
+                    <ComboBoxItem Content="3" ></ComboBoxItem>
+                    <ComboBoxItem Content="4" ></ComboBoxItem>
+                    <ComboBoxItem Content="5" ></ComboBoxItem>
+                </ComboBox>
+                <Label Content="Color:" VerticalAlignment="Center" Padding="16,16,0,4"></Label>
+                <ComboBox x:Name="colorBox" Height="20" Width="60" Margin="0,0,0,16">
+                    <ComboBoxItem Tag="Black" IsSelected="True">
+                        <Image Source="/img/black.png" Width="60" Height="20" Stretch="Fill" />
+                    </ComboBoxItem>
+                    <ComboBoxItem Tag="White" >
+                        <Image Source="/img/white.png"  Width="60" Height="20" Stretch="Fill" />
+
+                    </ComboBoxItem>
+                    <ComboBoxItem Tag="Red" >
+                        <Image Source="/img/red.png"  Width="60" Height="20" Stretch="Fill" />
+
+                    </ComboBoxItem>
+                    <ComboBoxItem Tag="Green" >
+                        <Image Source="/img/green.png"  Width="60" Height="20" Stretch="Fill" />
+
+                    </ComboBoxItem>
+                    <ComboBoxItem Tag="Blue" >
+                        <Image Source="/img/blue.png"  Width="60" Height="20" Stretch="Fill" />
+
+                    </ComboBoxItem>
+                </ComboBox>
+
+            </StackPanel>
+            <StackPanel  DockPanel.Dock="Bottom" VerticalAlignment="Bottom">
+                <TextBlock Margin="4">Undo:<LineBreak/> Ctrl + Z</TextBlock>
+                <TextBlock Margin="4">Redo:<LineBreak /> Ctrl + Shift + Z</TextBlock>
+                <Button x:Name="Save" Width="40" Height="40" Click="SaveImg"  Margin="0,16,0,16">
+                  <Image Source="/img/save.png" />
+
+                </Button>
+                <Button x:Name="Load" Width="40" Height="40" Click="UploadImg"  Margin="0,0,0,16">
+                    <Image Source="/img/upload.png" />
+                </Button>
+            </StackPanel>
+        </DockPanel>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <Grid>
+                <Canvas x:Name="MainCanvas" Background="White" ClipToBounds="True" >
+
+                </Canvas>
+
+                <Border BorderThickness="1" BorderBrush="Black" Background="Transparent"  MouseDown="C_MouseDown" MouseMove="C_MouseMove" MouseUp="C_MouseUp">
+
+                </Border>
+            </Grid>
+        </ScrollViewer>
+    </DockPanel>
+</Window>

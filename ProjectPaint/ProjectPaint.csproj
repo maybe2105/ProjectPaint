@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="img\black.png" />
+    <None Remove="img\blue.png" />
+    <None Remove="img\dashed.png" />
+    <None Remove="img\green.png" />
+    <None Remove="img\line.png" />
+    <None Remove="img\red.png" />
+    <None Remove="img\save.png" />
+    <None Remove="img\upload.png" />
+    <None Remove="img\white.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GraphicsLibrary\Contract.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="img\black.png" />
+    <Resource Include="img\blue.png" />
+    <Resource Include="img\dashed.png" />
+    <Resource Include="img\green.png" />
+    <Resource Include="img\line.png" />
+    <Resource Include="img\red.png" />
+    <Resource Include="img\save.png" />
+    <Resource Include="img\upload.png" />
+    <Resource Include="img\white.png" />
+  </ItemGroup>
+
+</Project>
